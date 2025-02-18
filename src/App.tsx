@@ -1,35 +1,29 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { SectionTitle } from './components/SectionTitle'
 import './App.css'
+import { UserCard } from './components/UserCard'
+import { useAllUsers } from './hooks/useAllUsers'
+import './components/todo.css'
+import { AddTodo } from './components/AddTodo'
 
-function App() {
-  const [count, setCount] = useState(0)
+
+const App = () => {
+  const { getUsers, userProfiles, loading, error } = useAllUsers()
+  const onClickFetchUser = () => {
+    getUsers()
+  }
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <SectionTitle title="課題1.カード横並び" className="main__title" />
+      <button onClick={onClickFetchUser}>データ取得ボタン</button>
+      <ul className='user-cards'>
+        {error ? <p>データの取得に失敗しました</p> : loading ? <p>Loading...</p> : userProfiles?.map((user) => (
+          <UserCard key={user.id} user={user} />
+        ))}
+      </ul>
+      <SectionTitle title="課題2.TODOサンプル" className="main__title" />
+      <AddTodo />
     </>
   )
 }
-
 export default App

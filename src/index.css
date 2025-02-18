@@ -11,6 +11,16 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+
+  --color-white: #fff;
+  --color-black: #000;
+  --color-gray: #ccc;
+  --color-blue: #007bff;
+  --color-green: #28a745;
+  --color-red: #dc3545;
+  --color-yellow: #ffc107;
+  --color-purple: #6f42c1;
 }
 
 a {
@@ -24,10 +34,10 @@ a:hover {
 
 body {
   margin: 0;
-  display: flex;
+  /* display: flex;
   place-items: center;
   min-width: 320px;
-  min-height: 100vh;
+  min-height: 100vh; */
 }
 
 h1 {
@@ -38,11 +48,11 @@ h1 {
 button {
   border-radius: 8px;
   border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
+  padding: 1rem 2rem;
+  font-size: 2rem;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  /* background-color: #1a1a1a; */
   cursor: pointer;
   transition: border-color 0.25s;
 }

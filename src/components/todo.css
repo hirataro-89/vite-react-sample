@@ -1,0 +1,26 @@
+.todo-sample {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  place-items: center;
+  max-width: max-content;
+  margin-inline: auto;
+}
+
+.todo-sample button {
+  padding-block: revert;
+}
+
+
+.todo-sample input {
+  padding-block: 8px;
+  padding-inline: 1em;
+  font-size: 1rem;
+}
+
+.todo-list {
+  list-style: none;
+  padding-inline: 0;
+  display: grid;
+  gap: 4px;
+}

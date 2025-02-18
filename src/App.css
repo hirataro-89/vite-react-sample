@@ -40,3 +40,10 @@
 .read-the-docs {
   color: #888;
 }
+
+.user-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
+  gap: 10px;
+  padding: 0;
+}
