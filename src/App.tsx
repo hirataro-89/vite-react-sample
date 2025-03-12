@@ -5,7 +5,7 @@ import { useAllUsers } from './hooks/useAllUsers'
 import './components/todo.css'
 import { AddTodo } from './components/AddTodo'
 import { Counter } from './components/Counter'
-
+import { Modal } from './components/Modal'
 
 const App = () => {
   const { getUsers, userProfiles, loading, error } = useAllUsers()
@@ -28,7 +28,9 @@ const App = () => {
       <hr style={{ margin: '6rem 0' }} />
       <SectionTitle title="サンプル：カウントアップ" className="main__title" />
       <Counter />
+      <hr style={{ margin: '6rem 0' }} />
       <SectionTitle title="サンプル：モーダル" className="main__title" />
+      <Modal />
     </>
   )
 }

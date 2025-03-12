@@ -1,0 +1,41 @@
+.modal {
+  background-color: white;
+  max-width: 800px;
+  width: 100%;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+dialog[open] {
+  display: block grid;
+  place-items: center;
+}
+
+dialog[open]::backdrop {
+  background-color: rgb(0 0 0 / 0.3);
+  -webkit-backdrop-filter: blur(4px); /* Safariではまだベンダープレフィックスが必要 */
+  backdrop-filter: blur(4px);
+}
+
+.modal__content {
+  display: grid;
+  place-items: center;
+  color: #000;
+}
+
+.modal__open {
+  color: #fff;
+  padding: 8px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.modal__close {
+  color: #fff;
+  padding: 8px;
+  font-size: 0.8rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+

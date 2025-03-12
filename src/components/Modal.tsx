@@ -1,22 +1,21 @@
-import { useState, FC } from 'react'
-import './Modal.css'
+import { FC, useRef } from 'react'
+import styles from './Modal.module.css';
 
 
 export const Modal: FC = () => {
-  const [count, setCount] = useState<number>(0)
-
-  const onClickCountUp = () => {
-    setCount(count + 1)
-  }
-  const onClickCountDown = () => {
-    setCount(count - 1)
-  }
+  const dialogRef = useRef<HTMLDialogElement>(null);
+  const handleShowModal = () => dialogRef.current?.showModal();
+  const handleCloseModal = () => dialogRef.current?.close();
 
   return (
-    <div className='counter'>
-      <button className='counter__button' onClick={onClickCountDown}>-</button>
-      <p className='counter__text'>{count}</p>
-      <button className='counter__button' onClick={onClickCountUp}>+</button>
-    </div>
+    <>
+      <button className={styles.modal__open} onClick={handleShowModal}>モーダルを開く</button>
+      <dialog ref={dialogRef} className={styles.modal} autoFocus>
+        <div className={styles.modal__content}>
+          <p>モーダルの中身です</p>
+          <button className={styles.modal__close} onClick={handleCloseModal}>閉じる</button>
+        </div>
+      </dialog>
+    </>
   )
 }
