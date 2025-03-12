@@ -30,7 +30,10 @@ const App = () => {
       <Counter />
       <hr style={{ margin: '6rem 0' }} />
       <SectionTitle title="サンプル：モーダル" className="main__title" />
-      <Modal />
+      <Modal>
+        <p>モーダルの中身です</p>
+        <p>モーダルの中身です笑</p>
+      </Modal>
     </>
   )
 }

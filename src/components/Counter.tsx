@@ -1,6 +1,6 @@
 import { useState, FC } from 'react'
 import './Counter.css'
-
+import { Modal } from './Modal'
 
 export const Counter: FC = () => {
   const [count, setCount] = useState<number>(0)
@@ -13,10 +13,13 @@ export const Counter: FC = () => {
   }
 
   return (
-    <div className='counter'>
-      <button className='counter__button' onClick={onClickCountDown}>-</button>
-      <p className='counter__text'>{count}</p>
-      <button className='counter__button' onClick={onClickCountUp}>+</button>
-    </div>
+    <>
+      <div className='counter'>
+        <button className='counter__button' onClick={onClickCountDown}>-</button>
+        <p className='counter__text'>{count}</p>
+        <button className='counter__button' onClick={onClickCountUp}>+</button>
+      </div>
+      <Modal />
+    </>
   )
 }
