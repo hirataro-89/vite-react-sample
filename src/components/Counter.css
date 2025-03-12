@@ -1,0 +1,16 @@
+.counter {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  justify-content: center;
+}
+
+.counter__text {
+  font-size: 2rem;
+}
+
+.counter__button {
+  font-size: 1.5rem;
+  padding: 0.5rem 1rem;
+}
+

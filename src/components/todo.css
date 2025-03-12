@@ -23,4 +23,12 @@
   padding-inline: 0;
   display: grid;
   gap: 4px;
+  place-items: center;
+}
+
+.todo-item {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  justify-content: center;
 }

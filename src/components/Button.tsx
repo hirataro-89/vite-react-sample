@@ -1,7 +1,6 @@
 import { useState } from 'react';
 
 export const Button = () => {
-  const [count, setCount] = useState(0);
   const [flag, setFlag] = useState(false);
 
   const handleClick = () => {

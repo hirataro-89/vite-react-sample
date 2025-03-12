@@ -4,6 +4,7 @@ import { UserCard } from './components/UserCard'
 import { useAllUsers } from './hooks/useAllUsers'
 import './components/todo.css'
 import { AddTodo } from './components/AddTodo'
+import { Counter } from './components/Counter'
 
 
 const App = () => {
@@ -21,8 +22,13 @@ const App = () => {
           <UserCard key={user.id} user={user} />
         ))}
       </ul>
-      <SectionTitle title="課題2.TODOサンプル" className="main__title" />
+      <hr style={{ margin: '6rem 0' }} />
+      <SectionTitle title="サンプル：TODO" className="main__title" />
       <AddTodo />
+      <hr style={{ margin: '6rem 0' }} />
+      <SectionTitle title="サンプル：カウントアップ" className="main__title" />
+      <Counter />
+      <SectionTitle title="サンプル：モーダル" className="main__title" />
     </>
   )
 }
