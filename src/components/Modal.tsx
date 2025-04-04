@@ -1,13 +1,12 @@
-import { FC, useRef } from 'react'
+import { FC } from 'react'
 import styles from './Modal.module.css';
+import { useModal } from '../hooks/useModal';
 
 type Props = {
   children: React.ReactNode
 }
 export const Modal: FC<Props> = ({ children }) => {
-  const dialogRef = useRef<HTMLDialogElement>(null);
-  const handleShowModal = () => dialogRef.current?.showModal();
-  const handleCloseModal = () => dialogRef.current?.close();
+  const { dialogRef, handleShowModal, handleCloseModal } = useModal();
 
   return (
     <>
