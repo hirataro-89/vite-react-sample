@@ -19,7 +19,6 @@ export const Counter: FC = () => {
         <p className='counter__text'>{count}</p>
         <button className='counter__button' onClick={onClickCountUp}>+</button>
       </div>
-      <Modal />
     </>
   )
 }
