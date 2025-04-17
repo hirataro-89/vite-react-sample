@@ -5,8 +5,19 @@
   justify-content: center;
 }
 
+.timer__buttonWrap {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
 .timer__button {
   margin-top: 1rem;
   padding: 0.5rem 1rem;
   border-radius: 0.25rem;
+  font-size: 1rem;
+}
+
+.timer__time {
+  font-size: 2rem;
 }

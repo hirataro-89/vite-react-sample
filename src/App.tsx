@@ -7,6 +7,7 @@ import { AddTodo } from './components/AddTodo'
 import { Counter } from './components/Counter'
 import { Modal } from './components/Modal'
 import { Timer } from './components/Timer'
+import { Alert } from './components/Alert'
 
 const App = () => {
   const { getUsers, userProfiles, loading, error } = useAllUsers()
@@ -38,6 +39,9 @@ const App = () => {
       <hr style={{ margin: '6rem 0' }} />
       <SectionTitle title="サンプル：タイマー" className="main__title" />
       <Timer />
+      <hr style={{ margin: '6rem 0' }} />
+      <SectionTitle title="サンプル：アラート" className="main__title" />
+      <Alert />
     </>
   )
 }
