@@ -23,6 +23,13 @@ export const Timer = () => {
     setIsRunning(true);
   }
 
+  // 時間を分と秒に変換する関数
+  const formatTime = (seconds: number) => {
+    const minutes = Math.floor(seconds / 60);
+    const remainingSeconds = seconds % 60;
+    return `${minutes}分${remainingSeconds}秒`;
+  }
+
   useEffect(() => {
     let interval: number;
     if (isRunning && isDisplay) {
@@ -43,8 +50,8 @@ export const Timer = () => {
       <div className={styles.timer__wrap}>
         {isDisplay && (
           <>
-            <time className={styles.timer__time}>{time}</time>
-            <span>秒経過</span>
+            <time className={styles.timer__time}>{formatTime(time)}</time>
+            <span>経過</span>
           </>
         )}
       </div>
