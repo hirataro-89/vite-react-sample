@@ -8,7 +8,8 @@ import { Counter } from './components/Counter'
 import { Modal } from './components/Modal'
 import { Timer } from './components/Timer'
 import { Alert } from './components/Alert'
-import { UserContext } from './context/UseContext'
+import { ColorModeProvider } from './context/ColorModeContext'
+import { ColorMode } from './components/ColorMode'
 
 const App = () => {
   const { getUsers, userProfiles, loading, error } = useAllUsers()
@@ -17,7 +18,7 @@ const App = () => {
   }
 
   return (
-    <UserContext.Provider value='test'>
+    <ColorModeProvider>
       <SectionTitle title="課題1.カード横並び" className="main__title" />
       <button onClick={onClickFetchUser}>データ取得ボタン</button>
       <ul className='user-cards'>
@@ -26,7 +27,7 @@ const App = () => {
         ))}
       </ul>
       <hr style={{ margin: '6rem 0' }} />
-      <SectionTitle title="サンプル：TODO" className="main__title"/>
+      <SectionTitle title="サンプル：TODO" className="main__title" />
       <AddTodo />
       <hr style={{ margin: '6rem 0' }} />
       <SectionTitle title="サンプル：カウントアップ" className="main__title" />
@@ -43,7 +44,11 @@ const App = () => {
       <hr style={{ margin: '6rem 0' }} />
       <SectionTitle title="サンプル：アラート" className="main__title" />
       <Alert />
-    </UserContext.Provider>
+      <hr style={{ margin: '6rem 0' }} />
+      <SectionTitle title="サンプル：カラーモード切替" className="main__title" />
+      <ColorMode />
+      <hr style={{ margin: '6rem 0' }} />
+    </ColorModeProvider>
   )
 }
 export default App
