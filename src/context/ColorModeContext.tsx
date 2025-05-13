@@ -17,7 +17,7 @@ export const useColorMode = (): ColorModeContextProps => {
   return context;
 };
 
-interface ProviderProps {
+type ProviderProps = {
   children: ReactNode;
 }
 
